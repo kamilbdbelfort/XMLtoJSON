@@ -1,19 +1,14 @@
 onst xml2js = require('xml2js')
 const fs = require('fs')
 
-// read XML from a file
-const xml = fs.readFileSync('C:\\Users\\Kamil\\OneDrive - Xillio\\Desktop\\Canada_71836447_export.xml')
+const readXmlFile = fs.readFileSync('C:\\Users\\Kamil\\OneDrive - Xillio\\Desktop\\Canada_71836447_export.xml');
 
-// convert XML to JSON
-xml2js.parseString(xml, { mergeAttrs: true }, (err, result) => {
+xml2js.parseString(readXmlFile, { mergeAttrs: true }, (err, result) => {
   if (err) {
     throw err
   }
 
-  // `result` is a JavaScript object
-  // convert it to a JSON string
-  const json = JSON.stringify(result, null, 4)
+  const convertToJSON = JSON.stringify(result, null, 4);
 
-  // save JSON in a file
-  fs.writeFileSync('user.json', json)
+  fs.writeFileSync('C:\\Users\\Kamil\\OneDrive - Xillio\\Desktop\\Canada_71836447_export.json', convertToJSON);
 })
