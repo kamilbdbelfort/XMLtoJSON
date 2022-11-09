@@ -1,4 +1,4 @@
-onst xml2js = require('xml2js')
+const xml2js = require('xml2js')
 const fs = require('fs')
 
 const readXmlFile = fs.readFileSync('C:\\Users\\Kamil\\OneDrive - Xillio\\Desktop\\Canada_71836447_export.xml');
